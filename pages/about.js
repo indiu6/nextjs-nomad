@@ -1,12 +1,12 @@
 import NavBar from './NavBar';
 
-function index() {
+function about() {
   return (
     <div>
       <NavBar />
-      <h1>hi</h1>
+      <h1>About</h1>
     </div>
   );
 }
 
-export default index;
+export default about;
