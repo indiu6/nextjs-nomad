@@ -1,10 +1,7 @@
-import NavBar from './components/NavBar';
-
 function index() {
   return (
     <div>
-      <NavBar />
-      <h1>hi</h1>
+      <h1 className="active">hi</h1>
     </div>
   );
 }
