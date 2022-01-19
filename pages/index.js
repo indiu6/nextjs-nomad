@@ -1,7 +1,10 @@
+import Seo from '../components/Seo';
+
 function index() {
   return (
     <div>
-      <h1 className="active">hi</h1>
+      <Seo title="Home" />
+      <h1 className="active">Hello</h1>
     </div>
   );
 }
