@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Seo from '../components/Seo';
 
 function Home({ results }) {
+  //* this was moved to getServerSideProps
   // const [movies, setMovies] = useState();
 
   // useEffect(() => {
@@ -15,15 +16,7 @@ function Home({ results }) {
 
   const router = useRouter();
   const onClick = (id, title) => {
-    router.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          title,
-        },
-      },
-      `/movies/${id}`,
-    );
+    router.push(`/movies/${title}/${id}`);
   };
 
   return (
@@ -41,13 +34,15 @@ function Home({ results }) {
           <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
           <h4>
             <Link
-              href={{
-                pathname: `/movies/${movie.id}`,
-                query: {
-                  title: movie.original_title,
-                },
-              }}
-              as={`/movies/${movie.id}`}
+              // href={{
+              //   pathname: `/movies/${movie.id}`,
+              //   query: {
+              //     title: movie.original_title,
+              //   },
+              // }}
+              // as={`/movies/${movie.id}`}
+
+              href={`/movies/${movie.original_title}/${movie.id}`}
             >
               <a>{movie.original_title}</a>
             </Link>
